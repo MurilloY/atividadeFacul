@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
        }
  
        try {
-          const response = await fetch('/processar-formulario', {
+          const response = await fetch('./processar-formulario', {
              method: 'POST',
              headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -31,5 +31,4 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Erro na requisição:', error);
        }
     });
- });
- 
+});
