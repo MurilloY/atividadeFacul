@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/processar-formulario"
+  to = "/.netlify/functions/processar-formulario"
+  status = 200
