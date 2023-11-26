@@ -12,12 +12,18 @@ app.post('/processar-formulario', (req, res) => {
 
    // Validação simples no servidor
    if (!nome || !email || !idade) {
-      return res.status(400).send('Por favor, preencha todos os campos.');
+      return res.status(400).sendFile(path.join(__dirname, 'public', 'index.html')); // Redireciona para o formulário com mensagem de erro
    }
 
-   // Você pode realizar validações mais complexas conforme necessário
+   // Simulação de cadastro bem-sucedido
+   // Substitua esta parte com a lógica real de cadastro no seu banco de dados
+   const cadastroBemSucedido = true;
 
-   res.status(200).send(`Cadastro realizado com sucesso!<br>Nome: ${nome}<br>Email: ${email}<br>Idade: ${idade}`);
+   if (cadastroBemSucedido) {
+      return res.status(200).sendFile(path.join(__dirname, 'public', 'resultado.html'));
+   } else {
+      return res.status(400).sendFile(path.join(__dirname, 'public', 'resultado.html'));
+   }
 });
 
 app.listen(port, () => {
